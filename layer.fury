@@ -1,6 +1,35 @@
 version	3
 schemas	default	id	default
-		projects	flawless	id	flawless
+		projects	bm4	id	bm4
+				modules	core	id	core
+						kind	Plugin
+						main	Some	com.olegpy.bm4.BetterMonadicFor
+						plugin	Some	bm4
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	
+						params	
+						sources	
+						binaries	com.olegpy:better-monadic-for_2.12:0.3.1	binRepo	central
+								group	com.olegpy
+								artifact	better-monadic-for_2.12
+								version	0.3.1
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	core
+				license	unknown
+				description	
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
+			flawless	id	flawless
 				modules	core	id	core
 						kind	Library
 						main	None
@@ -10,10 +39,36 @@ schemas	default	id	default
 							moduleId	compiler
 							intransitive	true
 							hidden	false
-						after	
-						params	
+						after	bm4/core	projectId	bm4
+								moduleId	core
+								intransitive	false
+								hidden	false
+							kind-projector/core	projectId	kind-projector
+								moduleId	core
+								intransitive	false
+								hidden	false
+						params	Ypartial-unification	Ypartial-unification
 						sources	flawless:core/src/main/scala	flawless:core/src/main/scala
-						binaries	
+						binaries	com.github.julien-truffaut:monocle-macro_2.12:2.0.0	binRepo	central
+								group	com.github.julien-truffaut
+								artifact	monocle-macro_2.12
+								version	2.0.0
+							com.softwaremill.diffx:diffx-core_2.12:0.2.0	binRepo	central
+								group	com.softwaremill.diffx
+								artifact	diffx-core_2.12
+								version	0.2.0
+							dev.profunktor:console4cats_2.12:0.8.0	binRepo	central
+								group	dev.profunktor
+								artifact	console4cats_2.12
+								version	0.8.0
+							org.typelevel:cats-effect_2.12:2.0.0	binRepo	central
+								group	org.typelevel
+								artifact	cats-effect_2.12
+								version	2.0.0
+							org.typelevel:cats-mtl-core_2.12:0.7.0	binRepo	central
+								group	org.typelevel
+								artifact	cats-mtl-core_2.12
+								version	0.7.0
 						resources	
 						bloopSpec	None
 						environment	
@@ -26,10 +81,39 @@ schemas	default	id	default
 						moduleId	compilerff
 						intransitive	true
 						hidden	false
+			kind-projector	id	kind-projector
+				modules	core	id	core
+						kind	Plugin
+						main	Some	d_m.KindProjector
+						plugin	Some	kind-projector
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	
+						params	
+						sources	
+						binaries	org.typelevel:kind-projector_2.12:0.10.3	binRepo	central
+								group	org.typelevel
+								artifact	kind-projector_2.12
+								version	0.10.3
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	core
+				license	unknown
+				description	
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
 		repos	flawless	id	flawless
 				repo	gh:kubukoz/flawless
-				track	master
-				commit	c5428de7f2d03af0d4574a5108d4b847d3e3ad5d
+				track	neu
+				commit	e4b40105485ae5a8e3400b3151dc7be1cf5637b5
 				local	None
 			scala	id	scala
 				repo	gh:propensive/.scala
