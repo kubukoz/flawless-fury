@@ -74,11 +74,37 @@ schemas	default	id	default
 						environment	
 						properties	
 						policy	
-				main	Some	core
+					tests	id	tests
+						kind	Application
+						main	Some	flawless.tests.FlawlessTests
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	flawless/core	projectId	flawless
+								moduleId	core
+								intransitive	false
+								hidden	false
+						params	
+						sources	flawless:tests/src/main/scala	flawless:tests/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	java.lang.RuntimePermission shutdownHooks -	className	java.lang.RuntimePermission
+								target	shutdownHooks
+								action	None
+							java.util.PropertyPermission cats.effect.fusionMaxStackDepth read	className	java.util.PropertyPermission
+								target	cats.effect.fusionMaxStackDepth
+								action	Some	read
+				main	Some	tests
 				license	unknown
 				description	
 				compiler	Some	projectId	scala
-						moduleId	compilerff
+						moduleId	compiler
 						intransitive	true
 						hidden	false
 			kind-projector	id	kind-projector
