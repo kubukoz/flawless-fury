@@ -1,0 +1,43 @@
+version	3
+schemas	default	id	default
+		projects	flawless	id	flawless
+				modules	core	id	core
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	
+						params	
+						sources	flawless:core/src/main/scala	flawless:core/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	core
+				license	unknown
+				description	
+				compiler	Some	projectId	scala
+						moduleId	compilerff
+						intransitive	true
+						hidden	false
+		repos	flawless	id	flawless
+				repo	gh:kubukoz/flawless
+				track	master
+				commit	c5428de7f2d03af0d4574a5108d4b847d3e3ad5d
+				local	None
+			scala	id	scala
+				repo	gh:propensive/.scala
+				track	master
+				commit	b5a210a5e2b9ba713753850037c3f6136466ccfc
+				local	None
+		imports	scala:scala-2.12.8	repo	scala
+				schema	scala-2.12.8
+		main	Some	flawless
+main	default
+aliases	
